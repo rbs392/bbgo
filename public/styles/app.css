@@ -1,0 +1,19 @@
+.search-wrapper{
+	padding:20%;
+	padding-bottom:5%;
+}
+.position-rel{
+	position:relative;
+}
+.position-rel .icon-set-right{
+	position: absolute;
+	top:10px;
+	right:10px;
+}
+.carousel-control.left,.carousel-control.right{
+	background-image:none !important; 
+}
+.scroll-enable{
+	height:121px;
+	overflow:hidden;
+}
