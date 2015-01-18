@@ -1,5 +1,17 @@
+.related-articles{
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+.cursor-pointer{
+	cursor: pointer!important;
+}
+.ajax-loader{
+	background: url('../imgs/ajax-loader.gif');
+	height: 16px;
+	width: 16px;
+}
 .search-wrapper{
-	padding:20%;
+	padding:10% 20%;
 	padding-bottom:5%;
 }
 .position-rel{
@@ -16,4 +28,75 @@
 .scroll-enable{
 	height:121px;
 	overflow:hidden;
+	margin-bottom: 0px;
+}
+.related-articles{
+
+}
+.margin-top-10{
+	margin-top:10px;
+}
+.margin-top-15{
+	margin-top:15px;
+}
+.details i{
+	color:#75C73F;
+}
+.gradient1{
+	background-color:#75C73F;
+	color:#375C19;
+	padding:5px;
+	border-radius:3px;
+}
+.gradient1 .title{
+	font-weight:800;
+	font-size:18px;
+}
+.gradient2{
+	background-color:#FB7737;
+	color:#FFFFFF;
+	text-shadow:1px 1px #000000;
+	padding:5px;
+	border-radius:3px;	
+}
+.gradient2 .title{
+	font-weight:800;
+	font-size:18px;	
+}
+
+.margin-top-neg-10{
+	margin-top:-10px;
+}
+.price-tag{
+	background-color:#F8F8F0;
+	color:#B8B081;
+	font-weight:600;
+}
+.price-tag .price{
+	font-size: 40px;
+	text-shadow:1px 1px #cccccc;
+}
+
+.price-tag .tag{
+	position: absolute;
+	top:25%;
+	right: 0px;
+}
+.price-tag .tag .tag-flag-green{
+	height:18px;
+	width:70px;
+	border-left:18px solid transparent;
+	border-top:18px solid #75C73F;
+	border-bottom:18px solid #75C73F;
+	color:#375C19;
+}
+
+.price-tag .tag .tag-flag-red{	
+	height:18px;
+	width:70px;
+	border-left:18px solid transparent;
+	border-top:18px solid #FB7737;
+	border-bottom:18px solid #FB7737;
+	color:#FFFFFF;
+	text-shadow:1px 1px #000000;
 }

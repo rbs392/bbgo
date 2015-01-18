@@ -12,19 +12,22 @@ module.directive("scrollTo",[function(){
 	var definition={
 		restrict 	: 'A',
 		scope 		: {
-			'scrollDir' : "=scrollDir",
-			'unit'		: "=unit"
+			'scrollDirection' : "=",
+			'unit'		: "="
 		},
 		link 		: function(scope,element,attrs){
 			//can handle left right aswell as of now notneeded
-			console.log(element.parent().parent().find('ul'))
 			element.on('click',function(){
-				alert(scope.direction)
-				if(scope.direction="top"){
-					scope.unit="-"+scope.unit;
+				console.log(attrs.scrollDirection)
+				var curScrollTop = element.parent().parent().find('.related-articles-list').scrollTop();
+				if(attrs.scrollDirection==='top'){
+					scope.unit=curScrollTop-120;
+					element.parent().parent().find('.related-articles-list').animate({scrollTop:scope.unit+"px"},'1000');	
+				}else{
+					scope.unit=curScrollTop+120;
+					element.parent().parent().find('.related-articles-list').animate({scrollTop:scope.unit+"px"},'1000');	
 				}
-				alert(scope.unit);
-				element.parent().parent().find('ul').animate({scrollTop:scope.unit},100);
+				
 			})
 		}
 	}
@@ -34,8 +37,6 @@ module.directive("scrollTo",[function(){
 module.filter("headingFilter",[function(){
 	return function(text){
 		if(text){
-
-			console.log(text.match(/<a href=\"[\w\W]*\">(<b>)*([\w\W]*)(<\/b>)*<\/a>/))
 			return text.match(/<a href=\"[\w\W]*\">(<b>)*([\w\W]*)(<\/b>)*<\/a>/)[2]	
 		}
 		
