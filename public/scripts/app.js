@@ -1,5 +1,10 @@
+//BBGO module declaration
+//requires ngResource
 var module = angular.module("BBGO",["ngResource"]);
 
+
+//BBGOService service
+//Used to fetch data from the duck duck go api via node proxy set
 module.service("BBGOService",["$resource",function($resource){
 	return $resource('api',{},{
 		query : {
@@ -8,18 +13,21 @@ module.service("BBGOService",["$resource",function($resource){
 	});
 }]);
 
+
+//scrollTo Directive
+//Used to navigate with jquery animate written to handle only top and down.
 module.directive("scrollTo",[function(){
 	var definition={
 		restrict 	: 'A',
 		scope 		: {
-			'scrollDirection' : "=",
-			'unit'		: "="
+			'scrollDirection' 	: "=",
+			'unit'				: "="
 		},
 		link 		: function(scope,element,attrs){
 			//can handle left right aswell as of now notneeded
 			element.on('click',function(){
-				console.log(attrs.scrollDirection)
 				var curScrollTop = element.parent().parent().find('.related-articles-list').scrollTop();
+				
 				if(attrs.scrollDirection==='top'){
 					scope.unit=curScrollTop-120;
 					element.parent().parent().find('.related-articles-list').animate({scrollTop:scope.unit+"px"},'1000');	
@@ -33,7 +41,10 @@ module.directive("scrollTo",[function(){
 	}
 	return definition;
 	
-}])
+}]);
+
+//HeadingFilter 
+//used to extract the heading from the result set could have used a decorator but serves the purppose 
 module.filter("headingFilter",[function(){
 	return function(text){
 		if(text){
@@ -41,16 +52,17 @@ module.filter("headingFilter",[function(){
 		}
 		
 	}
-}])
+}]);
 
+//BBGOCtrl
+//Does his job 
+//TODO: Query in address bar 
 
 module.controller("BBGOCtrl",["$scope","$location","$filter","BBGOService",function($scope,$location,$filter,BBGOService){
 
 	$scope.response = null;
-	//console.log($location.search());
-	//using window.location to avoid ng-route bad!!
-	//var globalQuery = window.location.search.replace('?q=','') ;
-	//window.location.search = "q=hello"
+	$scope.loading	= true;
+	
 	$scope.search = function(query,check){
 		if(check){
 			query = $filter("headingFilter")(query);
@@ -62,8 +74,8 @@ module.controller("BBGOCtrl",["$scope","$location","$filter","BBGOService",funct
 			q : query,
 			format : "json",
 			pretty:1
-		}
-		$scope.loading=true;
+		}		
+		
 		BBGOService.query(request,function(data){
 			$scope.response = data;
 			$scope.loading=false;
@@ -72,12 +84,7 @@ module.controller("BBGOCtrl",["$scope","$location","$filter","BBGOService",funct
 			$scope.error=false;
 		});
 	}
-
-	/*if( globalQuery){
-		$scope.search( globalQuery);
-	}*/
 	
-	
-}])
+}]);
 
 

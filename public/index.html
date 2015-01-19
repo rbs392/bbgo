@@ -1,141 +1,56 @@
+<!DOCTYPE html>
 <html ng-app="BBGO">
-<head>
-	<title>BBGO</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="styles/lib.css">
-	<link rel="stylesheet" type="text/css" href="styles/app.css">
-	<noscript>Javascript is not enabled in your browser please enable it to view the content</noscript>
+	<head>
+		
+		<title>BBGO</title>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<link rel="stylesheet" type="text/css" href="styles/lib.css">
+		<link rel="stylesheet" type="text/css" href="styles/app.css">
+		
+		<noscript>Javascript is not enabled in your browser please enable it to view the content</noscript>
 
-</head>
-<body ng-controller="BBGOCtrl" class="bg-color">
+	</head>
+	<body ng-controller="BBGOCtrl" class="bg-color">
 
-	<section class="container" ng-hide="response">
-		<section class="search-wrapper text-center" ng-cloak>
-			<img class="logo" src="imgs/logo.png" alt="logo"></img>
-			<h1 class="logo-text">BuckBuckGo</h1>
-			<div class="input-wrapper">
-				<form class="form-group position-rel" ng-submit="search(query)">
-					<input class="form-control" ng-model="query"></input>
-					<i ng-hide="loading" class="glyphicon glyphicon-search icon-set-right"></i>
-					<i ng-show="loading" class="ajax-loader icon-set-right"></i>
-				</form>
-			</div>
-		</section>
-		<hr>
+		<!-- landing page starts-->
+		<section class="container" ng-hide="response">
+			<section class="search-wrapper text-center" ng-cloak>
+				<img class="logo" src="imgs/logo.png" alt="logo"></img>
+				<h1 class="logo-text">BuckBuckGo</h1>
+				<div class="input-wrapper">
+					<form class="form-group position-rel" ng-submit="search(query)">
+						<input class="form-control" ng-model="query"></input>
+						<i ng-hide="loading" class="glyphicon glyphicon-search icon-set-right"></i>
+						<i ng-show="loading" class="ajax-loader icon-set-right"></i>
+					</form>
+				</div>
+			</section>
 
-		<section class="ads-wrapper">
-			
-			<article class="row text-center hidden-xs hidden-sm" >
-				<h1>Try Search pro</h1>
-				<section class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-					<header class="text-center gradient1">
-						<span class="title">LIGHT</span><br>
-						<emphasis>Great for small business</emphasis>
-					</header>
-					<div class="price-tag position-rel">
-						<span class="price">$5</span>
-						<br>Monthly
+			<hr>
 
-						<div class="tag">
-							<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
-						</div>
-					</div>
-					<div class="details">
-						<ul class="list-group">
-							<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
-						</ul>
-					</div>
-					<footer>Up to 1 Million searches</footer>
-				</section>
-				<section class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-					<header class="text-center gradient2">
-						<span class="title">RUN</span><br>
-						<emphasis>Great for medium business</emphasis>
-					</header>
-					<div class="price-tag position-rel">
-						<span class="price">$9<sup>79</sup></span>
-						<br>Monthly
-						<div class="tag">
-							<div class="tag-flag-red"><div class="margin-top-neg-10">Join</div></div>
-						</div>
-					</div>
-					<div class="details">
-						<ul class="list-group">
-							<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
-						</ul>
-					</div>
-					<footer>Up to 1 Million searches</footer>
-				</section>
-				<section class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-					<header class="text-center gradient1">
-						<span class="title">FLY</span><br>
-						<emphasis>Great for Enterprise</emphasis>
-					</header>
-					<div class="price-tag position-rel">
-						<span class="price">$12</span>
-						<br>Monthly
-						<div class="tag">
-							<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
-						</div>
-						<br>
-						
-					</div>
-					<div class="details">
-						<ul class="list-group">
-							<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
-							<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
-						</ul>
-					</div>
-					<footer>Up to 1 Million searches</footer>
-				</section>
-			</article>
+			<!-- Ads wrapper start -->
+			<section class="ads-wrapper">
 
-			<div id="carousel-example-generic" class="carousel slide visible-xs-block visible-sm-block" data-ride="carousel" >
-				
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-				  		<header class="text-center gradient1">
+				<!-- Ads for resolutions > sm-->
+				<article class="row text-center hidden-xs hidden-sm" >
+					<h1 class="thin-font">Try Search Pro</h1>
+					
+					<section class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+						<header class="text-center gradient1">
 							<span class="title">LIGHT</span><br>
-							<emphasis>Great for small business</emphasis>
+							<em>Great for small business</em>
 						</header>
-						<div class="price-tag text-center position-rel">
-							<span class="price">$5</span>
-							 <br>Monthly
-							 <div class="tag">
-								<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
-							</div>
-						</div>
-						<div class="details text-center">
-							<ul class="list-group">
-								<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
-								<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
-								<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
-								<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
-							</ul>
-						</div>
-						<footer class="text-center">Up to 1 Million searches</footer>
-					</div>
-					<div class="item">
-				  		<header class="text-center gradient2">
-							<span class="title">RUN</span><br>
-							<emphasis>Great for medium business</emphasis>
-						</header>
-						<div class="price-tag text-center position-rel">
-							<span class="price">$9 <sup>79</sup></span>
-							<br>Monthly 
+						<div class="price-tag position-rel">
+							<span class="price"><sup class="cents">$</sup>5</span>
+							<br>Monthly
+
 							<div class="tag">
 								<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
 							</div>
 						</div>
-						<div class="details text-center">
+						<div class="details">
 							<ul class="list-group">
 								<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
 								<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
@@ -143,21 +58,47 @@
 								<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
 							</ul>
 						</div>
-						<footer class="text-center">Up to 1 Million searches</footer>
-					</div>
-					<div class="item">
+						<footer>Up to 1 Million <br> searches</footer>
+					</section>
+
+					<section class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+						<header class="text-center gradient2">
+							<span class="title">RUN</span><br>
+							<em>Great for medium business</em>
+						</header>
+						<div class="price-tag position-rel">
+							<span class="price"><sup class="cents">$</sup>9<sup class="cents">79</sup></span>
+							<br>Monthly
+							<div class="tag">
+								<div class="tag-flag-red"><div class="margin-top-neg-10">Join</div></div>
+							</div>
+						</div>
+						<div class="details">
+							<ul class="list-group">
+								<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
+								<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
+								<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
+								<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
+							</ul>
+						</div>
+						<footer>Up to 5 Million <br> searches</footer>
+					</section>
+
+					<section class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 						<header class="text-center gradient1">
 							<span class="title">FLY</span><br>
-							<emphasis>Great for Enterprise</emphasis>
+							<em>Great for Enterprise</em>
 						</header>
-						<div class="price-tag text-center position-rel">
-							<span class="price">$12</span>
+						<div class="price-tag position-rel">
+							<span class="price"><sup class="cents">$</sup>12</span>
 							<br>Monthly
 							<div class="tag">
 								<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
 							</div>
+							<br>
+							
 						</div>
-						<div class="details text-center">
+						<div class="details">
 							<ul class="list-group">
 								<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
 								<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
@@ -165,96 +106,210 @@
 								<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
 							</ul>
 						</div>
-						<footer class="text-center">Up to 1 Million searches</footer>
-					</div>
-				</div>
+						<footer>Unnlimited searches</footer>
+					</section>
 
-				<a class="left carousel-control" role="button" data-slide="prev" href="#carousel-example-generic">
-					<span class="glyphicon glyphicon-chevron-left"  aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" role="button" href="#carousel-example-generic" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</section>
-	</section>
+					<!-- addon information -->
+					<section class="fancy-text col-lg-offset-6 col-md-offset-4 col-sm-offset-2 hidden-xs col-lg-6 col-md-8 col-sm-8">
+						<span>While our commercial director <br> was on vaction we came up with this <br></span>
+						<emphasis>crazy price</emphasis> 
+					</section>
+					<!-- addon information ends-->
 
-	
-	<section class="search-list-wrapper row" ng-show="response">
-		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs margin-top-15 text-center" >
-		  <a href="localhost:3000">
-		    <img src="imgs/logo.png" alt="logo" width="36px" height="36px">
-		  </a>
-		</div>
-		<div class="margin-top-15">
-		  <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
-		    <form name="form2" class="form-group position-rel" ng-submit="search(query)">
-				<input class="form-control" ng-model="query"></input>
-				<i ng-hide="loading" class="glyphicon glyphicon-search icon-set-right"></i>
-				<i ng-show="loading" class="ajax-loader icon-set-right"></i>
-			</form>
-		  </div>
-		</div>
-			
-		<div class="related-articles col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="response.RelatedTopics">
-			<div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-7 col-sm-7 col-md-7 col-xs-11">
-				<ul class="list-unstyled">
-					<li ng-show="response.RelatedTopics[0].Result" class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-show="response.Image">
-							<img  ng-src="{{response.Image}}" class="margin-top-15" width="100%" 
-							height="160px"></img>
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-							<p class="pull-left"> 
-								<h4>{{response.Heading}}</h4>
-								<span>{{response.Abstract}}</span>
-							</p>
-							<div class="clearfix">
-								<a class="pull-left" ng-href="{{response.AbstractURL}}">More on Wikipedia</a>
+				</article>
+				<!-- Ads for resolutions > sm- ends->
+
+				<!-- Carousel for lower resolutions < sm-->
+				<div id="carousel-example-generic" class="carousel slide visible-xs-block visible-sm-block" data-ride="carousel" >
+					
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+					  		<header class="text-center gradient1">
+								<span class="title">LIGHT</span><br>
+								<em>Great for small business</em>
+							</header>
+							<div class="price-tag text-center position-rel">
+								<span class="price"><sup class="cents">$</sup>5</span>
+								 <br>Monthly
+								 <div class="tag">
+									<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
+								</div>
 							</div>
+							<div class="details text-center">
+								<ul class="list-group">
+									<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
+								</ul>
+							</div>
+							<footer class="text-center">Up to 1 Million searches</footer>
 						</div>
+						<div class="item">
+					  		<header class="text-center gradient2">
+								<span class="title">RUN</span><br>
+								<em>Great for medium business</em>
+							</header>
+							<div class="price-tag text-center position-rel">
+								<span class="price"><sup class="cents"><sup class="cents">$</sup></sup>9 <sup class="cents">79</sup></span>
+								<br>Monthly 
+								<div class="tag">
+									<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
+								</div>
+							</div>
+							<div class="details text-center">
+								<ul class="list-group">
+									<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
+								</ul>
+							</div>
+							<footer class="text-center">Up to 5 Million <br> searches</footer>
+						</div>
+						<div class="item">
+							<header class="text-center gradient1">
+								<span class="title">FLY</span><br>
+								<em>Great for Enterprise</em>
+							</header>
+							<div class="price-tag text-center position-rel">
+								<span class="price"><sup class="cents">$</sup>12</span>
+								<br>Monthly
+								<div class="tag">
+									<div class="tag-flag-green"><div class="margin-top-neg-10">Join</div></div>
+								</div>
+							</div>
+							<div class="details text-center">
+								<ul class="list-group">
+									<li class="list-group-item"><i class="glyphicon glyphicon-time"></i>24/7 Tech support</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-lock"></i>Advanced options</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-star"></i>100Gb Storage</li>
+									<li class="list-group-item"><i class="glyphicon glyphicon-heart"></i>1GB Bandwidth</li>
+								</ul>
+							</div>
+							<footer class="text-center">Unlimited searches</footer>
+						</div>
+					</div>
+
+					<!-- nav bars-->
+
+					<!-- TODO remove the hash problem with bootstrap-->
+					<a class="left carousel-control" role="button" data-slide="prev" href="#carousel-example-generic">
+						<span class="glyphicon glyphicon-chevron-left"  aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" role="button" href="#carousel-example-generic" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+					<!-- nav bars ends-->
+				</div>
+				<!-- Carousel for lower resolutions < sm ends-->
+			</section>
+			<!-- Ads wrapper ends -->
+		</section>
+		<!-- landing page ends-->
+
+		
+		<!-- search result starts -->
+		<section class="search-list-wrapper row" ng-show="response">
+
+			<!-- logo small-->
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs margin-top-15 text-center" >
+			  <a href="#"><img src="imgs/logo.png" alt="logo" width="50px" height="50px"></a>
+			</div>
+			<!-- logo small ends-->
+
+			<!-- search bar list page-->
+			<div class="margin-top-15">
+			  <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11">
+			    <form name="form2" class="form-group position-rel" ng-submit="search(query)">
+					<input class="form-control" ng-model="query"></input>
+					<i ng-hide="loading" class="glyphicon glyphicon-search icon-set-right"></i>
+					<i ng-show="loading" class="ajax-loader icon-set-right"></i>
+				</form>
+			  </div>
+			</div>
+			<!-- search bar list page ends-->
+				
+			<div class="related-articles col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="response.RelatedTopics">
+				<div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-7 col-sm-7 col-md-7 col-xs-11">
+					
+					<ul class="list-unstyled">
+						<li ng-show="response.RelatedTopics[0].Result" class="row">
+							
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-show="response.Image">
+								<img  ng-src="{{response.Image}}" class="margin-top-15" width="100%" 
+								height="160px"></img>
+							</div>
+							
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								
+								<p class="pull-left"> 
+									<h4><b>{{response.Heading}}</b></h4>
+									<span>{{response.Abstract}}</span>
+								</p>
+								
+								<div class="clearfix">
+									<a class="pull-left wiki" ng-href="{{response.AbstractURL}}">More on Wikipedia</a>
+								</div>
+
+							</div>
+
+						</li>
+						<li ng-show="!response">Oops!! some error struck</li>
+					</ul>
+
+				</div>
+				
+				<!-- related topic starts -->
+				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 hidden-xs" ng-show="response.RelatedTopics.length>2">
+					
+					<b>Related topics</b>
+					
+					<div class="text-center  cursor-pointer scroll" ng-show="response.RelatedTopics.length>3" scroll-to scroll-direction="top" unit="120">
+						<i class="glyphicon glyphicon-chevron-up" ng-click="limit=response.RelatedTopics.length"></i>
+					</div>
+
+					<ul class="list-group related-articles-list scroll-enable margin-bottom-0" ng-init="limit=3">
+						<li class="list-group-item" ng-repeat="topic in response.RelatedTopics |limitTo:limit" ng-show="topic.Result || topic.Name">
+							<a  class="cursor-pointer" ng-click="search(topic.Result,true)" ng-show="topic.Result">{{topic.Result | headingFilter}}</a>
+							<a  class="cursor-pointer" ng-click="search(topic.Name)" ng-show="topic.Name">{{topic.Name}}</a>
+							
+							<!-- inner results -->
+							<ul class="list-group" ng-show="topic.Topics">
+								<li class="list-group-item" ng-repeat="subtopic in topic.Topics">
+									<a class="cursor-pointer" ng-click="search(subtopic.Result,true)" ng-show="subtopic.Result">{{subtopic.Result | headingFilter}}</a>
+								</li>
+							</ul>
+							<!-- inner results ends-->
+
+						</li>
+					</ul>
+
+					<div class="text-center cursor-pointer scroll" ng-show="response.RelatedTopics.length>3" scroll-to scroll-direction="down" unit="120"> <i class="glyphicon glyphicon-chevron-down" ng-click="limit=response.RelatedTopics.length"></i></div>
+
+				</div>
+			</div>
+			
+			<div class="search-list col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-11 col-md-11 col-sm-11 col-xs-11 margin-top-15">
+				<ul class="list-unstyled">
+					<li ng-repeat="topic in response.Results" ng-show="topic.Result" class="clearfix">
+						<p class="pull-left"> 
+							<h4><a ng-href="{{topic.FirstURL}}">{{topic.Text}}</a></h4>
+							<span>{{topic.Text}}</span>
+						</p>
 					</li>
+					<li ng-show="response.Results.length<1">Cant find any result try someother topic??</li>
 					<li ng-show="!response">Oops!! some error struck</li>
 				</ul>
 			</div>
-			<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 hidden-xs" ng-show="response.RelatedTopics.length>2">
-				<b>Related topics</b>
-				<div class="text-center  cursor-pointer" ng-show="response.RelatedTopics.length>2" scroll-to scroll-direction="top" unit="120"> <i class="glyphicon glyphicon-chevron-up" ng-click="limit=response.RelatedTopics.length"></i></div>
-				<ul class="list-group related-articles-list scroll-enable margin-bottom-0" ng-init="limit=3">
-					<li class="list-group-item" ng-repeat="topic in response.RelatedTopics |limitTo:limit" ng-show="topic.Result || topic.Name">
-						<a  class="cursor-pointer" ng-click="search(topic.Result,true)" ng-show="topic.Result">{{topic.Result | headingFilter}}</a>
-						<a  class="cursor-pointer" ng-click="search(topic.Name)" ng-show="topic.Name">{{topic.Name}}</a>
-						<ul class="list-group" ng-show="topic.Topics">
-							<li class="list-group-item" ng-repeat="subtopic in topic.Topics">
-								<a class="cursor-pointer" ng-click="search(subtopic.Result,true)" ng-show="subtopic.Result">{{subtopic.Result | headingFilter}}</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<div class="text-center cursor-pointer" ng-show="response.RelatedTopics.length>2" scroll-to scroll-direction="down" unit="120"> <i class="glyphicon glyphicon-chevron-down" ng-click="limit=response.RelatedTopics.length"></i></div>
-			</div>
-		</div>
-		<div class="search-list col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-11 col-md-11 col-sm-11 col-xs-11 margin-top-15">
-			<ul class="list-unstyled">
-				<li ng-repeat="topic in response.Results" ng-show="topic.Result" class="clearfix">
-					<p class="pull-left"> 
-						<h4><a ng-href="{{topic.FirstURL}}">{{topic.Text}}</a></h4>
-						<span>{{topic.Text}}</span>
-					</p>
-				</li>
-				<li ng-show="response.Results.length<1">Cant find any result try someother topic??</li>
-				<li ng-show="!response">Oops!! some error struck</li>
-			</ul>
-		</div>
+		</section>
+		<!-- search result ends -->
 
-
-	</section>
-
-	<!--angular, bootstrap -->
-	<script type="text/javascript" src="vendors/lib.js"></script>
-	<script type="text/javascript" src="vendors/angular-resource.min.js"></script>
-	<script type="text/javascript" src="scripts/app.js"></script>
-</body>
+		
+		<script type="text/javascript" src="vendors/lib.js"></script>
+		<script type="text/javascript" src="vendors/angular-resource.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+	</body>
 </html>
