@@ -61,9 +61,11 @@ module.filter("headingFilter",[function(){
 module.controller("BBGOCtrl",["$scope","$location","$filter","BBGOService",function($scope,$location,$filter,BBGOService){
 
 	$scope.response = null;
-	$scope.loading	= true;
+	$scope.loading	= false;
+	$scope.error= false;
 	
 	$scope.search = function(query,check){
+		$scope.loading	= true;
 		if(check){
 			query = $filter("headingFilter")(query);
 			console.log(query)

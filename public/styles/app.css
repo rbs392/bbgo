@@ -22,6 +22,7 @@
 
 body{
 	font-family: Roboto-Regular;
+	border-top: 4px solid #FB7737;
 }
 em{
 	font-family: Roboto-Italic;
@@ -41,11 +42,12 @@ em{
 .fancy-text{
 	font-family:Roboto-Italic;
 	font-weight: 500;
-	font-size:40px;
+	font-size:20px;
+	margin-top: 75px;
 }
 .fancy-text emphasis{
 	color:#FB7737;
-	font-size: 70px;
+	font-size: 50px;
 }
 
 .margin-top-10{
@@ -89,6 +91,10 @@ hr{
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	padding: 5px;
+}
+
+.result-title{
+	color:black;
 }
 
 .cursor-pointer{
